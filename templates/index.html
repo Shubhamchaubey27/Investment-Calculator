@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GrowInvest Pro</title>
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+CiAgPHBhdGggZD0iTTEwIDgwIEwzMCA2MCBMNTAgNzAgTDcwIDUwIEw5MCA2MCIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjgiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4=" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 bg-gradient-to-br from-blue-50 to-green-50">
+
+    <!-- Container for the joyful confetti animation -->
+    <div id="confetti-container" class="confetti-container"></div>
+
+    <div class="w-full max-w-4xl mx-auto">
+        <header class="flex items-center justify-start mb-8">
+            <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCI+CiAgPHBhdGggZD0iTTEwIDgwIEwzMCA2MCBMNTAgNzAgTDcwIDUwIEw5MCA2MCIgc3Ryb2tlPSIjM2I4MmY2IiBzdHJva2Utd2lkdGg9IjgiIGZpbGw9Im5vbmUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4=" alt="GrokInvest Pro Logo" class="h-12 mr-4">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-extrabold text-gray-800 mb-1">GrowInvest Pro</h1>
+                <p class="text-lg text-gray-600">Your ultimate toolkit for smart financial planning and investments.</p>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <div class="mb-6">
+            <div class="flex justify-center border-b border-gray-200">
+                <button class="nav-tab active" data-calculator="sip">SIP Calculator</button>
+                <button class="nav-tab" data-calculator="lumpsum">Lumpsum Calculator</button>
+                <button class="nav-tab" data-calculator="hybrid">Hybrid Calculator</button>
+            </div>
+        </div>
+
+        <!-- Calculator Content Area -->
+        <div id="calculator-content">
+            <!-- Calculators will be loaded here by JavaScript -->
+        </div>
+
+        <footer class="mt-12 text-center text-gray-500 text-sm">
+            © 2025 GrowInvest Pro. All rights reserved. Powered by Silia.
+        </footer>
+    </div>
+
+    <!-- JavaScript files -->
+    <script src="{{ url_for('static', filename='js/sip.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/lumpsum.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/hybrid.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

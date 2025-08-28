@@ -1,0 +1,141 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #e0f2fe, #ecfdf5);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-tab {
+    padding: 12px 24px;
+    font-weight: 600;
+    color: #4b5563;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.nav-tab.active {
+    color: #1d4ed8;
+    background: #ffffff;
+    border-bottom: 4px solid #1d4ed8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.nav-tab:hover {
+    color: #1e40af;
+    background: #f1f5f9;
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.confetti-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 9999;
+    overflow: hidden;
+}
+
+.confetti-piece {
+    position: absolute;
+    width: 8px;
+    height: 16px;
+    opacity: 0;
+    border-radius: 2px;
+}
+
+.confetti-container.animate .confetti-piece {
+    animation: confetti-fall 3s linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% {
+        opacity: 0.9;
+        transform: translateY(0) rotate(0) scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(100vh) rotate(720deg) scale(0.5);
+    }
+}
+
+.form-input {
+    transition: all 0.3s ease;
+    border: 1px solid #d1d5db;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+canvas {
+    max-height: 300px;
+    width: 100% !important;
+    height: auto !important;
+    border-radius: 8px;
+}
+
+.bg-white {
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.bg-white:hover {
+    transform: translateY(-2px);
+}
+
+/* --- NEW / UPDATED STYLES for dynamic amounts --- */
+.amount-display {
+    word-break: break-all;
+    overflow-wrap: break-word;
+    /* Base font size will be set by Tailwind, JS will override it */
+    transition: font-size 0.3s ease-in-out;
+}
+
+@media (max-width: 640px) {
+    .nav-tab {
+        font-size: 0.9rem;
+        padding: 10px 16px;
+    }
+    .grid-cols-1 {
+        grid-template-columns: 1fr;
+    }
+    canvas {
+        max-height: 250px;
+    }
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+    .text-4xl {
+        font-size: 1.875rem;
+    }
+    /* Adjusted for mobile */
+    .amount-display {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .max-w-4xl {
+        max-width: 960px;
+    }
+}
